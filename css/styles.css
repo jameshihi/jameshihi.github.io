@@ -4400,7 +4400,6 @@ td:last-child {
     text-decoration: none !important;
     cursor: default;
     pointer-events: none;
-    color: red;
 }
 .job-title{
     font-weight: bold;
