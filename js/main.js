@@ -39,7 +39,7 @@
     const ssMoveHeader = function () {
 
         const hdr = document.querySelector('.s-header');
-        const hero = document.querySelector('#billboard');
+        const hero = document.querySelector('#intro');
         let triggerHeight;
 
         if (!(hdr && hero)) return;
