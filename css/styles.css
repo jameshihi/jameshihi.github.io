@@ -4397,8 +4397,10 @@ td:last-child {
 
 .experiene-times-title{
     margin-bottom:var(--vspace-0_2);
+    text-decoration: none !important;
+    cursor: default;
     pointer-events: none;
-    color: blue;
+    color: red;
 }
 .job-title{
     font-weight: bold;
