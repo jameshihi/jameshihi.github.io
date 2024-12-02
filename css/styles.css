@@ -1229,7 +1229,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family           : var(--font-2);
+    
     font-weight           : 400;
     color                 : var(--color-text-dark);
     font-variant-ligatures: common-ligatures;
@@ -3906,6 +3906,8 @@ td:last-child {
     list-style : none;
     font-size  : calc(var(--text-size) * 1.05);
     margin-left: 0;
+    text-align: right;
+    padding-top: 20px;
 }
 
 .s-about__list a {
@@ -4380,14 +4382,53 @@ td:last-child {
     padding-top: 20px;
 
 }
+
+.author__box {
+    display      : inline-block;
+    min-height   : var(--vspace-3);
+    margin-bottom: var(--vspace-0_625);
+    padding-left : calc(3.5 * var(--space));
+    padding-top : calc(0.75 * var(--space));
+    position     : relative;
+}
+
+.author__box__avatar {
+    width        : var(--vspace-3);
+    height       : var(--vspace-3);
+    border-radius: 100%;
+    outline      : none;
+    position     : absolute;
+    top          : 0;
+    left         : 0;
+}
+
+.author__box__cite {
+    display: block;
+}
+
+.author__box__cite strong,
+.author__box__cite span {
+    font-style: normal;
+    transition: all 0.3s ease-in-out;
+}
+
+.author__box__cite strong {
+    font-size  : calc(var(--text-size) * 0.9);
+    font-weight: 500;
+    line-height: var(--vspace-0_75);
+    color      : var(--color-text-dark);
+}
+
+.author__box__cite span {
+    display    : block;
+    font-size  : calc(var(--text-size) * 0.75);
+    font-weight: 400;
+    line-height: var(--vspace-0_5);
+    color      : var(--color-text-light);
+}
   
 
 
-}
-
-.experiene-times p, .experiene-content p{
-    margin-bottom: 0;
-}
 
 
 .grid-list-items__item hr{
@@ -4427,6 +4468,25 @@ td:last-child {
 .job-responsibilities-list li{
      padding-left: 0;
 
+}
+
+.btn-detail{
+    background: transparent;
+    --btn-height:40px;
+    border-radius: 40px;
+    margin-top: 8px;
+
+}
+
+.btn-colse{
+    background  : var(--color-btn-primary-hover);
+    border-color: var(--color-btn-primary-hover);
+    color       : var(--color-btn-primary-hover-text);
+    border-radius: 40px;
+}
+
+.modal-title{
+    letter-spacing:0;
 }
 
 .card img{
@@ -4695,7 +4755,7 @@ td:last-child {
 .modal {
   --bs-modal-zindex: 1055;
   --bs-modal-width: 500px;
-  --bs-modal-padding: 1rem;
+  --bs-modal-padding: 2rem;
   --bs-modal-margin: 0.5rem;
   --bs-modal-color: ;
   --bs-modal-bg: var(--bs-body-bg);
@@ -4706,7 +4766,7 @@ td:last-child {
   --bs-modal-inner-border-radius: calc(var(--bs-border-radius-lg) - (var(--bs-border-width)));
   --bs-modal-header-padding-x: 1rem;
   --bs-modal-header-padding-y: 1rem;
-  --bs-modal-header-padding: 1rem 1rem;
+  --bs-modal-header-padding: 1rem 2rem;
   --bs-modal-header-border-color: var(--bs-border-color);
   --bs-modal-header-border-width: var(--bs-border-width);
   --bs-modal-title-line-height: 1.5;
@@ -5171,4 +5231,13 @@ td:last-child {
   .card-group > .card:not(:first-child) .card-footer {
     border-bottom-left-radius: 0;
   }
+}
+
+.img-thumbnail {
+  padding: 0.25rem;
+  background-color: var(--bs-body-bg);
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  max-width: 100%;
+  height: auto;
 }
