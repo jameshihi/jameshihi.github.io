@@ -1,75 +1,5 @@
 @charset "UTF-8";
 
-/* =================================================================== 
- * Hudson Main Stylesheet
- * Template Ver. 1.0.0
- * 04-03-2023
- * ------------------------------------------------------------------
- *
- * TOC:
- * # SETTINGS
- *      ## fonts 
- *      ## colors
- *      ## spacing and typescale
- *      ## grid variables
- * # CSS RESET
- * # GRID
- * # BASE SETUP
- * # UTILITY CLASSES
- * # TYPOGRAPHY 
- *      ## base type styles
- *      ## additional typography & helper classes
- *      ## lists
- *      ## media 
- *      ## spacing
- * # PRELOADER
- *      ## page loaded
- * # FORM 
- *      ## style placeholder text
- * # BUTTONS
- * # TABLE
- * # COMPONENTS
- *      ## pagination
- *      ## alert box 
- *      ## skillbars
- *      ## stats tabs
- * # PROJECT-WIDE SHARED STYLES
- *      ## section header
- *      ## social list
- *      ## swiper overrides
- *      ## glightbox overrides
- * # GRID-BASED LAYOUTS
- *      ## grid block
- *      ## list grid
- * # PAGE WRAP
- * # SITE HEADER
- *      ## logo
- *      ## main navigation
- *      ## mobile menu toggle
- * # INTRO
- *      ## intro content
- *      ## intro btn cv download
- *      ## intro social
- *      ## intro scroll down
- *      ## intro transitions
- * # ABOUT
- *      ## about blocks
- * # WORKS
- *      ## folio entries 
- *      ## testimonials
- * # NUMBERS
- * # FOOTER
- *      ## copyright
- *      ## go top
- *
- * ------------------------------------------------------------------ */
-
-
-/* ===================================================================
- * # SETTINGS
- *
- *
- * ------------------------------------------------------------------- */
 
 /* ------------------------------------------------------------------- 
  * ## fonts 
@@ -1308,7 +1238,7 @@ h6,
     font-size     : var(--text-sm);
     line-height   : var(--vspace-0_75);
     text-transform: uppercase;
-    letter-spacing: 0.25rem;
+    /*letter-spacing: 0.25rem;*/
 }
 
 /* emphasis, italic,
@@ -3096,6 +3026,7 @@ td:last-child {
     border          : 1px solid rgba(255, 255, 255, 0.03);
     padding         : 0 var(--gutter);
     box-shadow      : var(--box-shadow);
+    border-radius: 20px; 
 }
 
 .s-header__block {
@@ -3423,6 +3354,7 @@ td:last-child {
 
 .s-intro__content-btns .btn {
     margin-right: var(--vspace-0_375);
+    border-radius: 20px;
 }
 
 .s-intro__content-btns .btn:last-child {
@@ -3494,6 +3426,7 @@ td:last-child {
 
 .s-intro__btn-download .btn--stroke {
     position: relative;
+    border-radius: 20px;
 }
 
 .s-intro__btn-download .btn--stroke::before {
@@ -4245,6 +4178,10 @@ td:last-child {
     margin-bottom                : var(--vspace-2_5);
 }
 
+.s-footer__buttons .btn{
+    border-radius: 20px;
+}
+
 .s-footer__bottom {
     font-size  : calc(var(--text-size) * 0.8);
     color      : rgba(255, 255, 255, 0.2);
@@ -4428,9 +4365,6 @@ td:last-child {
 }
   
 
-
-
-
 .grid-list-items__item hr{
 
     margin: 0;
@@ -4452,7 +4386,7 @@ td:last-child {
     font-size  : var(--text-sm);
     font-weight: 300;
     line-height: 1.2;
-    color      : var(--color-text-light) !important;
+    color      : var(--color-gray-19) !important;
 }
 
 .job-responsibilities-title{
@@ -4483,23 +4417,6 @@ td:last-child {
     border-color: var(--color-btn-primary-hover);
     color       : var(--color-btn-primary-hover-text);
     border-radius: 40px;
-}
-
-.modal-title{
-    letter-spacing:0;
-}
-
-.card img{
-    margin-bottom: 0;
-}
-
-.card-title{
-    margin-top: var(--bs-card-title-spacer-y);
-}
-
-.card-btn{
-    display: block;
-    margin-top: 40px;
 }
 
 .title-bold{
@@ -4884,6 +4801,10 @@ td:last-child {
   padding: var(--bs-modal-padding);
 }
 
+.modal-body-showcase{
+    padding:0; 
+}
+
 .modal-footer {
   display: flex;
   flex-shrink: 0;
@@ -4927,9 +4848,9 @@ td:last-child {
 }
 .modal-fullscreen {
   width: 100vw;
-  max-width: none;
+  max-width: 1400px;
   height: 100%;
-  margin: 0;
+  margin: 0 auto;
 }
 .modal-fullscreen .modal-content {
   height: 100%;
@@ -4944,7 +4865,7 @@ td:last-child {
   overflow-y: auto;
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 576px) {
   .modal-fullscreen-sm-down {
     width: 100vw;
     max-width: none;
@@ -4964,7 +4885,7 @@ td:last-child {
     overflow-y: auto;
   }
 }
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .modal-fullscreen-md-down {
     width: 100vw;
     max-width: none;
@@ -4984,7 +4905,7 @@ td:last-child {
     overflow-y: auto;
   }
 }
-@media (max-width: 991.98px) {
+@media (max-width: 992px) {
   .modal-fullscreen-lg-down {
     width: 100vw;
     max-width: none;
@@ -5004,7 +4925,7 @@ td:last-child {
     overflow-y: auto;
   }
 }
-@media (max-width: 1199.98px) {
+@media (max-width: 1200px) {
   .modal-fullscreen-xl-down {
     width: 100vw;
     max-width: none;
@@ -5024,7 +4945,7 @@ td:last-child {
     overflow-y: auto;
   }
 }
-@media (max-width: 1399.98px) {
+@media (max-width: 1400px) {
   .modal-fullscreen-xxl-down {
     width: 100vw;
     max-width: none;
@@ -5047,16 +4968,16 @@ td:last-child {
 
 
 .card {
-  --bs-card-spacer-y: 1rem;
-  --bs-card-spacer-x: 1rem;
+  --bs-card-spacer-y: 2rem;
+  --bs-card-spacer-x: 2rem;
   --bs-card-title-spacer-y: 0.5rem;
   --bs-card-title-color: ;
   --bs-card-subtitle-color: ;
   --bs-card-border-width: var(--bs-border-width);
   --bs-card-border-color: var(--bs-border-color-translucent);
-  --bs-card-border-radius: var(--bs-border-radius);
+  --bs-card-border-radius: var(--bs-border-radius-xxl);
   --bs-card-box-shadow: ;
-  --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+  --bs-card-inner-border-radius: var(--bs-border-radius-xxl);
   --bs-card-cap-padding-y: 0.5rem;
   --bs-card-cap-padding-x: 1rem;
   --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
@@ -5110,6 +5031,8 @@ td:last-child {
 .card-title {
   margin-bottom: var(--bs-card-title-spacer-y);
   color: var(--bs-card-title-color);
+  margin-top: 0; 
+  font-weight: bold; 
 }
 
 .card-subtitle {
@@ -5173,6 +5096,19 @@ td:last-child {
   border-radius: var(--bs-card-inner-border-radius);
 }
 
+.card img{
+    margin-bottom: 0;
+}
+
+.card-btn{
+    display: block;
+    margin-top: 40px;
+    border-radius: 20px;
+    background: transparent;
+    font-size: 1.5rem;   
+
+}
+
 .card-img,
 .card-img-top,
 .card-img-bottom {
@@ -5233,11 +5169,12 @@ td:last-child {
   }
 }
 
-.img-thumbnail {
-  padding: 0.25rem;
-  background-color: var(--bs-body-bg);
-  border: var(--bs-border-width) solid var(--bs-border-color);
-  border-radius: var(--bs-border-radius);
-  max-width: 100%;
-  height: auto;
+.img-showcase{
+    display: block;
+    width: 100%; 
+    margin-bottom: 0; 
+}
+
+.img-showcase-photo{
+  margin-bottom: 60px;  
 }
