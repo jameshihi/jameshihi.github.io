@@ -5176,5 +5176,7 @@ td:last-child {
 }
 
 .img-showcase-photo{
+    display: block;
+    width: 100%; 
   margin-bottom: 60px;  
 }
