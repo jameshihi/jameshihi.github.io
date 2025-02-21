@@ -177,33 +177,64 @@
    /* swiper
     * ------------------------------------------------------ */ 
     const ssSwiper = function() {
-
         const testimonialsSwiper = new Swiper('.s-testimonials__slider', {
-
             slidesPerView: 1,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
             },
             breakpoints: {
-                // when window width is > 400px
                 401: {
                     slidesPerView: 1,
                     spaceBetween: 20
                 },
-                // when window width is > 800px
                 801: {
                     slidesPerView: 2,
                     spaceBetween: 50
                 },
-                // when window width is > 1180px
                 1181: {
                     slidesPerView: 3,
                     spaceBetween: 48
                 }
+            },
+            preventClicks: false,
+            preventClicksPropagation: false,
+            on: {
+                init: function(swiper) {
+                    // 為所有 modal 按鈕添加點擊處理
+                    const modalButtons = document.querySelectorAll('[data-modal="true"]');
+                    modalButtons.forEach(button => {
+                        button.addEventListener('click', function(e) {
+                            if (swiper.touchEventsData && swiper.touchEventsData.isMoved) {
+                                e.preventDefault();
+                                return;
+                            }
+                            // 如果不是滑動，則允許點擊事件
+                            e.stopPropagation();
+                        }, true);
+
+                        // 防止按鈕觸發 Swiper 的觸摸事件
+                        button.addEventListener('touchstart', function(e) {
+                            e.stopPropagation();
+                        }, true);
+
+                        button.addEventListener('touchmove', function(e) {
+                            e.stopPropagation();
+                        }, true);
+                    });
+                },
+                touchStart: function(swiper, e) {
+                    // 如果觸摸開始於按鈕，則不觸發滑動
+                    if (e.target.closest('.btn')) {
+                        swiper.allowTouchMove = false;
+                    }
+                },
+                touchEnd: function(swiper) {
+                    // 觸摸結束後恢復滑動功能
+                    swiper.allowTouchMove = true;
+                }
             }
         });
-
     }; // end ssSwiper
 
 
