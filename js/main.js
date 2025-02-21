@@ -18,17 +18,19 @@
 
         html.classList.add('ss-preload');
         
-        window.addEventListener('load', function() {
-            html.classList.remove('ss-preload');
-            html.classList.add('ss-loaded');
-            
-            preloader.addEventListener('transitionend', function afterTransition(e) {
-                if (e.target.matches('#preloader'))  {
-                    siteBody.classList.add('ss-show');
-                    e.target.style.display = 'none';
-                    preloader.removeEventListener(e.type, afterTransition);
-                }
-            });
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                html.classList.remove('ss-preload');
+                html.classList.add('ss-loaded');
+                
+                preloader.addEventListener('transitionend', function afterTransition(e) {
+                    if (e.target.matches('#preloader'))  {
+                        siteBody.classList.add('ss-show');
+                        e.target.style.display = 'none';
+                        preloader.removeEventListener(e.type, afterTransition);
+                    }
+                });
+            }, 1000);
         });
 
     }; // end ssPreloader
