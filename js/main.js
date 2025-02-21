@@ -11,15 +11,16 @@
    /* preloader
     * -------------------------------------------------- */
     const ssPreloader = function() {
-
         const siteBody = document.querySelector('body');
         const preloader = document.querySelector('#preloader');
         if (!preloader) return;
 
         html.classList.add('ss-preload');
         
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
+        // 立即開始淡出預載
+        requestAnimationFrame(() => {
+            // 確保至少顯示一下載入動畫
+            setTimeout(() => {
                 html.classList.remove('ss-preload');
                 html.classList.add('ss-loaded');
                 
@@ -30,9 +31,18 @@
                         preloader.removeEventListener(e.type, afterTransition);
                     }
                 });
-            }, 1000);
+            }, 300); // 只等待 300ms
         });
 
+        // 設定最長等待時間
+        setTimeout(() => {
+            if (html.classList.contains('ss-preload')) {
+                html.classList.remove('ss-preload');
+                html.classList.add('ss-loaded');
+                siteBody.classList.add('ss-show');
+                preloader.style.display = 'none';
+            }
+        }, 1000); // 最長等待 1 秒
     }; // end ssPreloader
 
 
