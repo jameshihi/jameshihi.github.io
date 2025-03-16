@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write  # 確保 GitHub Actions 有權限寫入
+  contents: write  # 確保 GitHub Actions 有寫入權限
 
 jobs:
   build:
@@ -22,14 +22,18 @@ jobs:
       - name: Remove old minified CSS (確保 Git 偵測變更)
         run: rm -f css/style.min.css
 
-      - name: Minify CSS
+      - name: Debug File Changes
         run: |
+          echo "Before minification:"
+          ls -l css/style.min.css || echo "style.min.css not found"
+          echo "Running cleancss..."
           cleancss -o css/style.min.css css/style.css
-          ls -l css  # ✅ 檢查檔案是否成功生成
+          echo "After minification:"
+          ls -l css/style.min.css
 
       - name: Check Git Changes
         run: |
-          git add css/style.min.css
+          git add --force css/style.min.css
           git status  # ✅ 確認 Git 是否偵測變更
           git diff css/style.min.css || echo "No changes detected"
 
@@ -42,7 +46,7 @@ jobs:
           if git diff --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Auto-minify CSS"
+            git commit --allow-empty -m "Auto-minify CSS (forced update)"
             git pull --rebase origin main || true  # ✅ 避免衝突
             git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git HEAD:main
           fi
