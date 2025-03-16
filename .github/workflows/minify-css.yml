@@ -28,7 +28,7 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git add css/styles.min.css
+          git add css/style.min.css
           if git diff-index --quiet HEAD; then
             echo "No changes detected."
           else
