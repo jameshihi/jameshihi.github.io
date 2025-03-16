@@ -138,7 +138,7 @@ async function initializeModal() {
             swipers.forEach(container => {
                 if (container.swiper) {
                     container.swiper.allowTouchMove = true;
-                    container.swiper.attachEvents();
+                    container.swiper.update();
                 }
             });
         });
@@ -203,17 +203,60 @@ async function initializeModal() {
                     <img class="img-showcase lazyload" data-src="images/design_portfolio/uiux/medlecture/medlecture-case-2.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
                     <img class="img-showcase lazyload" data-src="images/design_portfolio/uiux/medlecture/medlecture-case-3.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
                 `,
-
-                // 攝影類（以下僅示範部分，其他項目同理移除 inline onload）
-                'hylerwoods': `
-                    <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_001.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
-                    <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_002.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
-                    <!-- 其他圖片請依此模式調整 -->
-                `,
-                // 其他分類同理……
-                'drqqPhotography': `...`,
-                'wedding': `...`,
-                'rose': `...`
+                
+                // 攝影類
+            'hylerwoods': `
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_001.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_002.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_003.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_004.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_005.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_006.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_007.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_008.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_009.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_010.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_011.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_012.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_013.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_014.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_015.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_016.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_017.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_018.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_019.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_020.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/hylerwoods/photo_021.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+            `,
+            'drqqPhotography': `
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/drqq/photo_001.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/drqq/photo_002.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/drqq/photo_003.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/drqq/photo_004.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/drqq/photo_005.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/drqq/photo_006.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+            `,
+            'wedding': `
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/wedding/photo_001.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/wedding/photo_002.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/wedding/photo_003.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/wedding/photo_004.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/wedding/photo_005.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/wedding/photo_006.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/wedding/photo_007.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/wedding/photo_008.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/wedding/photo_009.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/wedding/photo_010.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/wedding/photo_011.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/wedding/photo_012.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/wedding/photo_013.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/wedding/photo_014.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+            `,
+            'rose': `
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/rose/photo_001.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/rose/photo_002.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+                <img class="img-showcase-photo lazyload" data-src="images/design_portfolio/photography/rose/photo_003.jpg" src="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300'><rect width='100%' height='100%' fill='#cccccc'/></svg>">
+            `
             };
             
             return contents[id] || null;
