@@ -21,7 +21,7 @@ jobs:
 
       - name: Minify CSS
         run: |
-          cleancss -o css/styles.min.css css/style.css
+          cleancss -o css/style.min.css css/style.css
           ls -l css  # 確認檔案已生成
 
       - name: Commit and push minified CSS
