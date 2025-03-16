@@ -1,5 +1,5 @@
-@charset "UTF-8";
 
+@charset "UTF-8";
 
 /* ------------------------------------------------------------------- 
  * ## fonts 
@@ -3591,12 +3591,16 @@ button.btn--pill {
 
 
 .job-responsibilities-list{
-    list-style: none;
-    margin-left: 0;
+    list-style: none; 
+    display: flex;
+    flex-direction: column;
+    margin-left: 0; 
+    gap: 10px;
 }
 
 .job-responsibilities-list li{
      padding-left: 0;
+     line-height: 1.5; 
 
 }
 
@@ -4161,8 +4165,6 @@ button.btn--pill {
     overflow-y: auto;
   }
 }
-
-
 .card {
   --bs-card-spacer-y: 2rem;
   --bs-card-spacer-x: 2rem;
@@ -4399,3 +4401,7 @@ img.lazyload:not(.loaded) {
 img.lazyload.loaded {
     opacity: 1;
 }
+
+/* ------------------------------------------------------------------- 
+ * test
+ * ------------------------------------------------------------------- */
