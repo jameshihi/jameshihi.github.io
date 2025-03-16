@@ -5,34 +5,44 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write  # 確保 GitHub Actions 有寫入權限
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Install dependencies
         run: npm install clean-css-cli -g
 
-      # 確保 css 資料夾存在
-      - name: Ensure CSS directory exists
-        run: mkdir -p css
+      - name: Remove old minified CSS (強制 Git 偵測變更)
+        run: rm -f css/styles.min.css
 
       - name: Minify CSS
         run: |
-          cleancss -o css/style.min.css css/style.css
-          ls -l css  # 確認檔案已生成
+          cleancss -o css/styles.min.css css/style.css
+          ls -l css  # ✅ 確保檔案成功產生
+
+      - name: Check Git Changes
+        run: |
+          git add css/styles.min.css
+          git status  # ✅ 檢查 Git 是否偵測到變更
+          git diff css/styles.min.css || echo "No changes detected"
 
       - name: Commit and push minified CSS
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git add css/style.min.css
-          if git diff-index --quiet HEAD; then
-            echo "No changes detected."
+          git add css/styles.min.css
+          git status  # ✅ 再次確認 Git 變更
+          if git diff --quiet; then
+            echo "No changes to commit"
           else
             git commit -m "Auto-minify CSS"
-            git pull --rebase origin main
+            git pull --rebase origin main || true  # ✅ 避免衝突
             git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git HEAD:main
           fi
